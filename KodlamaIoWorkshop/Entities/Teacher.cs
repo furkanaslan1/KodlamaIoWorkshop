@@ -3,6 +3,19 @@
 public class Teacher
 
 {
+    public Teacher()
+    {
+        
+    }
+
+    public Teacher(int ıd, string firstName, string lastName, string ımageURL)
+    {
+        Id = ıd;
+        FirstName = firstName;
+        LastName = lastName;
+        ImageURL = ımageURL;
+    }
+
     public int Id { get; set; }
     public string FirstName { get; set; }
 
