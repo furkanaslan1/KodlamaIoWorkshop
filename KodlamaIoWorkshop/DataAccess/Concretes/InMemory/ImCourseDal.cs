@@ -16,7 +16,7 @@ namespace KodlamaIoWorkshop.DataAccess.Concretes.InMemory
         {
             _courses.Add(new Course(1, ".NET", "SDJSKF", "WWssk", true));
             _courses.Add(new Course(2, "JAVA", "SDJSKF", "ssAAk", true));
-            _courses.Add(new Course(3, "JAVASCRİPT", "SDJSKF", "ssSSk", true));
+            _courses.Add(new Course(3, "JAVASCRİPT", "SDJSKF", "aasSSk", true));
 
         }
         public void Add(Course course)
