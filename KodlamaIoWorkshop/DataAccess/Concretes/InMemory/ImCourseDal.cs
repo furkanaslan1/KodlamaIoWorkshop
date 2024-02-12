@@ -1,0 +1,56 @@
+﻿using KodlamaIoWorkshop.DataAccess.Abstract;
+using KodlamaIoWorkshop.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace KodlamaIoWorkshop.DataAccess.Concretes.InMemory
+{
+    public class ImCourseDal : ICourseDal
+    {
+        List<Course> _courses = new List<Course>();
+
+        public ImCourseDal()
+        {
+            _courses.Add(new Course(1, ".NET", "SDJSKF", "WWssk", true));
+            _courses.Add(new Course(1, "JAVA", "SDJSKF", "ssAAk", true));
+            _courses.Add(new Course(1, "JAVASCRİPT", "SDJSKF", "ssSSk", true));
+
+        }
+        public void Add(Course course)
+        {
+           _courses.Add(course);
+        }
+
+        public void Delete(Course course)
+        {
+            _courses.Remove(course);
+        }
+
+        public List<Course> GetAll()
+        {
+            return _courses;
+        }
+
+        public Course GetById(int id)
+        {
+            return _courses.Find(p => p.Id == id);
+        }
+
+        public void Update(Course course)
+        {
+
+           Course courseToUpdate = _courses.FirstOrDefault(c => c.Id == course.Id);
+            if (courseToUpdate != null)
+            {
+                courseToUpdate.Name = course.Name;
+                courseToUpdate.Description = course.Description;
+                courseToUpdate.PictureUrl = course.PictureUrl;
+                courseToUpdate.IsFree = course.IsFree;
+                
+            }
+        }
+    }
+}

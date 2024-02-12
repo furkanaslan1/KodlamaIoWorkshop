@@ -15,14 +15,14 @@ public class Course
 
     }
 
-    public Course(int ıd, string name, string description, string pictureUrl, bool ısFree, Teacher teacher)
+    public Course(int ıd, string name, string description, string pictureUrl, bool ısFree)
     {
         Id = ıd;
         Name = name;
         Description = description;
         PictureUrl = pictureUrl;
         IsFree = ısFree;
-        Teacher = teacher;
+        
     }
 
     public int Id { get; set; }
